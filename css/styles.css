@@ -1,7 +1,36 @@
 body {
   background-color: #c4ffb8;
+  /* margin:auto; */
+  text-align: center;
+
+}
+
+legend {
+  text-align: left;
 }
 
 #quiz-form ol li {
+  list-style: none;
+  margin:auto;
+
+  width:50%;
+}
+
+fieldset {
   background-color: rgb(255, 255, 255);
+  opacity:0.5;
+}
+
+/* fieldset.active {
+  opacity: 1;
+} */
+
+.popup-div{
+  position:fixed;
+  display: flex;
+  flex-direction: column;
+  
+  text-align: center;
+  color: #fff;
+  background-color: rgba(128, 128, 128, 0.627);
 }
