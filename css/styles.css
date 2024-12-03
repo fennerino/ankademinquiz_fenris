@@ -1,8 +1,6 @@
 body {
   background-color: #c4ffb8;
-  /* margin:auto; */
   text-align: center;
-
 }
 
 legend {
@@ -12,7 +10,6 @@ legend {
 #quiz-form ol li {
   list-style: none;
   margin:auto;
-
   width:50%;
 }
 
