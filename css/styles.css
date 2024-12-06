@@ -15,12 +15,12 @@ legend {
 
 fieldset {
   background-color: rgb(255, 255, 255);
-  opacity:0.7;
+  opacity:0.3;
 }
 
-/* fieldset.active {
+fieldset.active {
   opacity: 1;
-} */
+}
 
 .popup-div{
   position:fixed;

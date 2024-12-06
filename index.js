@@ -1,16 +1,19 @@
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  function beginQuiz() {
-    guidePopup();
-    loadQuestions();
-  
-  }
-
-
+// document.addEventListener("DOMContentLoaded", () => {
+//   function beginQuiz() {
+//     guidePopup();
+//     loadQuestions();
+//     lockInButtons();
+//     nextQuestion();
+//   }
+// });
 
 function guidePopup() {
-  document.querySelector(".popup-div").style.display = "none";
+
+}
+
+  // document.querySelector(".popup-div").style.display = "none";
 // TEMP INVISIBLE
 
 // declared array of ready-to-use questions meant to be looped through and appended to each corresponding fieldset .p
@@ -19,9 +22,8 @@ proceedBtn.addEventListener("click", (e) => {
   e.preventDefault();
   document.querySelector(".popup-div").style.display = "none";
 });
-}
 
-function loadQuestions() {
+
 let fieldsetNodes = document.querySelectorAll("fieldset .question"); //question paragraphs <p>
 let fieldsetArray = Array.from(fieldsetNodes);
 
@@ -43,15 +45,13 @@ const questions = [
     index++;
     console.log(question, index);
   });
+
+function loadQuestions() {
+
 }
 
-function lockInButtons() {}
-
-function quizFormStyling() {}
-
-
 let lockInBtn = document.querySelectorAll("fieldset .lockIn-btn");
-let lockinBtns = Array.from(lockInBtn);
+  let lockinBtns = Array.from(lockInBtn);
 
 lockinBtns.forEach((button, index) => {
   button.innerText = "Lock in answer";
@@ -63,20 +63,30 @@ lockinBtns.forEach((button, index) => {
     button.style.color = "grey";
     button.style.fontStyle = "italic";
     console.log("question " + (index + 1) + " locked in");
-    nextQuestion(button.closest("fieldset"));
+    // nextQuestion(button.closest("fieldset"));
   });
 });
 
-let quizForm = document.querySelector("#quiz-form");
-quizForm.style.backgroundColor = "#334";
+function lockInButtons() {
+  
+}
 
-// fieldsetArray.forEach((fieldset, index) => {});
+function lockAnswer(button) {
+  let currentQ = button.closest("li");
+  let selectedAnswer = currentQ.querySelector("input[type='radio']:checked");
+
+  if (!selectedAnswer) {
+    return;
+  }
+}
+
+// function quizFormStyling() {}
 
 let listObjects = document.querySelectorAll("li fieldset");
 let listArray = Array.from(listObjects);
 console.log(listObjects, listArray);
 
-listArray.forEach((fieldset, index) => {});
+// listArray.forEach((fieldset, index) => {});
 
 function nextQuestion(element) {
   element.style.backgroundColor = "#aaa"; // Lock the question with a new color
@@ -84,13 +94,19 @@ function nextQuestion(element) {
   element.forEach((input) => (input.disabled = true));
 }
 
-beginQuiz();
-});
+
+let quizForm = document.querySelector("#quiz-form");
+quizForm.style.backgroundColor = "#334";
+
+fieldsetArray.forEach((fieldset, index) => {});
+
+
+
 // console.log(questions);
 
-// function nextQuestion(element) {
-//   element.style.backgroundColor = "#333"
-// }
+function nextQuestion(element) {
+  element.style.backgroundColor = "#333"
+}
 
 // let questions = document.getElementsByClassName("p .question")
 // let questions = document.querySelectorAll("p .question")
